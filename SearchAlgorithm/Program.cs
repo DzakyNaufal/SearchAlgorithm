@@ -68,7 +68,7 @@ namespace SearchAlgorithm
                     ctr++;
                 }
                 if (item == arr[mid])
-                    Console.WriteLine("\n" + item.ToString() + "Found at position" + (mid + 1).ToString());
+                    Console.WriteLine("\n" + item.ToString() + " Found at position " + (mid + 1).ToString());
                 else
                     Console.WriteLine("\n" + item.ToString() + "Not found in the array\n");
                 Console.WriteLine("\nNumber of Comparison : " + ctr);
@@ -76,7 +76,35 @@ namespace SearchAlgorithm
                 Console.Write("\nContinue search (y/n):");
                 ch = char.Parse(Console.ReadLine().ToUpper());
             } while ((ch == 'y'));
-        } 
+        }
+        public void LinearSearch()
+        {
+            char ch;
+            //Search for number of Comparasion
+            int ctr;
+            do
+            {
+                //Accept the number to be searched
+                Console.WriteLine("\nEnter the element you want to search :");
+                int item = Convert.ToInt32(Console.ReadLine());
+
+                ctr = 0;
+                for (i = 0; i < n; i++)
+                {
+                    ctr++;
+                    if (arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + " Found st position " + (i + 1).ToString());
+                        break;
+                    }
+                }
+                if (i == n)
+                    Console.WriteLine("\n"+ item.ToString()+ " Not found in the array ");
+                Console.WriteLine("\n Number of comparasion : " + ctr);
+                Console.Write("\nContinue search (y/n):");
+                ch = char.Parse(Console.ReadLine().ToUpper());
+            } while ((ch == 'y'));
+        }
 
         static void Main(string[] args)
         {
